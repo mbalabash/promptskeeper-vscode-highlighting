@@ -1,0 +1,52 @@
+name: Release VSCode Extension
+
+on:
+  release:
+    types: [created]
+
+jobs:
+  package-and-upload:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Use Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: 22
+          cache: 'npm'
+
+      - name: Install Dependencies
+        run: npm ci
+
+      - name: Install VSCE (VSCode Extension Packaging Tool)
+        run: npm install -g vsce
+
+      - name: Verify Version Consistency
+        id: check_version
+        run: |
+          TAG_VERSION="${GITHUB_REF#refs/tags/}"
+          PACKAGE_VERSION=$(node -p "require('./package.json').version")
+          if [ "$TAG_VERSION" != "v$PACKAGE_VERSION" ]; then
+            echo "ERROR: GitHub Release tag ($TAG_VERSION) does not match package.json version (v$PACKAGE_VERSION)"
+            exit 1
+          fi
+          echo "Version match verified: $PACKAGE_VERSION"
+
+      - name: Package VSCode Extension
+        run: npm run package
+
+      - name: Upload VSIX to GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: "*.vsix"
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Publish to VSCode Marketplace
+        run: vsce publish --packagePath *.vsix
+        env:
+          VSCE_PAT: ${{ secrets.VSCE_PAT }}

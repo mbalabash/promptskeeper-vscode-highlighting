@@ -1,0 +1,162 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PromptsKeeper Utils blockRegex should match expected patterns (snapshot) 1`] = `
+[
+  "'#!promptskeeper test'",
+  ""#!promptskeeper with various
+  indentation and
+    structure"",
+  "\`#!promptskeeper backtick block\`",
+  "'''#!promptskeeper triple quotes'''",
+  """"#!promptskeeper more triple quotes"""",
+]
+`;
+
+exports[`PromptsKeeper Utils classSuffixes should match suffixes consistently (snapshot) 1`] = `
+{
+  "actions": [
+    {
+      "matches": true,
+      "word": "running",
+    },
+    {
+      "matches": false,
+      "word": "jumped",
+    },
+    {
+      "matches": true,
+      "word": "organize",
+    },
+    {
+      "matches": true,
+      "word": "simplify",
+    },
+    {
+      "matches": true,
+      "word": "create",
+    },
+    {
+      "matches": true,
+      "word": "detect",
+    },
+  ],
+  "descriptors": [
+    {
+      "matches": true,
+      "word": "beautiful",
+    },
+    {
+      "matches": true,
+      "word": "capable",
+    },
+    {
+      "matches": true,
+      "word": "endless",
+    },
+    {
+      "matches": false,
+      "word": "backwards",
+    },
+    {
+      "matches": true,
+      "word": "threefold",
+    },
+    {
+      "matches": true,
+      "word": "innermost",
+    },
+  ],
+  "objects": [
+    {
+      "matches": true,
+      "word": "solution",
+    },
+    {
+      "matches": true,
+      "word": "happiness",
+    },
+    {
+      "matches": true,
+      "word": "relationship",
+    },
+    {
+      "matches": true,
+      "word": "freedom",
+    },
+    {
+      "matches": false,
+      "word": "knowledge",
+    },
+    {
+      "matches": true,
+      "word": "performance",
+    },
+  ],
+  "subjects": [
+    {
+      "matches": true,
+      "word": "doctor",
+    },
+    {
+      "matches": true,
+      "word": "engineer",
+    },
+    {
+      "matches": true,
+      "word": "artist",
+    },
+    {
+      "matches": true,
+      "word": "employee",
+    },
+    {
+      "matches": true,
+      "word": "visitor",
+    },
+    {
+      "matches": false,
+      "word": "programmer",
+    },
+  ],
+}
+`;
+
+exports[`PromptsKeeper Utils splitTextIntoWords should split text consistently (snapshot) 1`] = `
+[
+  [
+    "Simple",
+    "example",
+    "text",
+  ],
+  [
+    "With-hyphens",
+    "and",
+    "apostrophe's",
+  ],
+  [
+    "Numbers123",
+    "and",
+    "symbols",
+  ],
+  [
+    "CamelCase",
+    "and",
+    "snake",
+    "case",
+    "text",
+  ],
+  [
+    "Mixed",
+    "123",
+    "and",
+    "text-with-numbers456",
+  ],
+  [
+    "Multilingual",
+    "English",
+    "español",
+    "Deutsch",
+    "日本語",
+  ],
+]
+`;

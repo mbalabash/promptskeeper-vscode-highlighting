@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Semantic Tokens Generator HIGHLIGHTING_GROUPS should define the correct structure for highlighting groups 1`] = `
+{
+  "action": {
+    "tokenModifiers": [
+      "declaration",
+    ],
+    "tokenType": "keyword",
+  },
+  "descriptor": {
+    "tokenModifiers": [
+      "declaration",
+    ],
+    "tokenType": "number",
+  },
+  "marker": {
+    "tokenModifiers": [
+      "declaration",
+    ],
+    "tokenType": "operator",
+  },
+  "object": {
+    "tokenModifiers": [
+      "declaration",
+    ],
+    "tokenType": "namespace",
+  },
+  "subject": {
+    "tokenModifiers": [
+      "declaration",
+    ],
+    "tokenType": "variable",
+  },
+}
+`;
+
+exports[`Semantic Tokens Generator getRegexForCategoryWords should generate consistent regex patterns (snapshot) 1`] = `
+[
+  {
+    "category": "marker",
+    "regex": "/#!promptskeeper.*?/gi",
+  },
+  {
+    "category": "subject",
+    "regex": "/\\b(developer|user|client)(s|'s)?\\b/gi",
+  },
+  {
+    "category": "action",
+    "regex": "/\\b(create|update|delete)(s|'s)?\\b/gi",
+  },
+  {
+    "category": "object",
+    "regex": "/\\b(application|database|interface)(s|'s)?\\b/gi",
+  },
+  {
+    "category": "descriptor",
+    "regex": "/\\b(powerful|efficient|reliable)(s|'s)?\\b/gi",
+  },
+]
+`;

@@ -1,0 +1,17 @@
+.vscode/**
+__mocks__/**
+*.vsix
+
+.github/**
+.git/**
+
+.gitignore
+.editorconfig
+
+temp/**
+
+test/**
+**/*.spec.js
+coverage/**
+
+package-lock.json
