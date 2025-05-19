@@ -1,8 +1,9 @@
 name: Release VSCode Extension (GitHub Release)
 
 on:
-  release:
-    types: [created]
+  push:
+    tags:
+      - "v*.*.*"
 
 jobs:
   package-and-upload:
