@@ -1,4 +1,4 @@
-name: Release VSCode Extension
+name: Release VSCode Extension (GitHub Release)
 
 on:
   release:
@@ -45,8 +45,3 @@ jobs:
         with:
           files: "*.vsix"
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Publish to VSCode Marketplace
-        run: vsce publish --packagePath *.vsix
-        env:
-          VSCE_PAT: ${{ secrets.VSCE_PAT }}
