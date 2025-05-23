@@ -1,7 +1,7 @@
 const {
   preparePromptForClassification,
   extractClassifiedWords,
-  initializeTransformers,
+  initializeModel,
   classifyWordUsingModel,
   classifyWordUsingHeuristics,
   PREDICTION_CACHE

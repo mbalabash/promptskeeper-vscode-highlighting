@@ -1,7 +1,7 @@
 const vscode = require('vscode')
 const { MARKER, blockRegex } = require('./dictionary')
 const { generateSemanticTokens } = require('./highlighter')
-const { initializeTransformers, extractClassifiedWords } = require('./classification')
+const { initializeModel, extractClassifiedWords } = require('./classification')
 
 async function activate(context) {
   // We define that we want to provide semantic tokens for JavaScript, TypeScript, Python, and Go files
@@ -16,8 +16,8 @@ async function activate(context) {
     ['operator', 'keyword', 'namespace', 'variable', 'number'],
     ['declaration']
   )
-  // Initialize the model
-  const classifier = await initializeTransformers()
+
+  const classifier = await initializeModel()
 
   const provider = {
     _eventEmitter: new vscode.EventEmitter(),

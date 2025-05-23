@@ -34,7 +34,7 @@ async function getModel(pipeline, progress) {
   })
 }
 
-async function initializeTransformers() {
+async function initializeModel() {
   process.env.HF_HOME = MODEL_CACHE_DIR
   process.env.TRANSFORMERS_CACHE = MODEL_CACHE_DIR
 
@@ -182,7 +182,7 @@ function preparePromptForClassification(prompt) {
 module.exports = {
   preparePromptForClassification,
   extractClassifiedWords,
-  initializeTransformers,
+  initializeModel,
   classifyWordUsingModel,
   classifyWordUsingHeuristics,
   PREDICTION_CACHE
